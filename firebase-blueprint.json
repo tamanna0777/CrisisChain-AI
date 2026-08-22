@@ -1,0 +1,161 @@
+{
+  "entities": {
+    "User": {
+      "fields": {
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "createdDate": { "type": "string" },
+        "accountStatus": { "type": "string" },
+        "bloodGroup": { "type": "string" },
+        "emergencyNotes": { "type": "string" },
+        "status": { "type": "string" },
+        "lastCheckIn": { "type": "string" }
+      }
+    },
+    "FamilyMember": {
+      "fields": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "inviterName": { "type": "string" },
+        "inviterEmail": { "type": "string" },
+        "inviterPhone": { "type": "string" },
+        "memberName": { "type": "string" },
+        "memberEmail": { "type": "string" },
+        "memberPhone": { "type": "string" },
+        "relationship": { "type": "string" },
+        "status": { "type": "string" },
+        "safetyStatus": { "type": "string" },
+        "lastCheckIn": { "type": "string" },
+        "invitedAt": { "type": "string" },
+        "acceptedAt": { "type": "string" }
+      }
+    },
+    "LocationRequest": {
+      "fields": {
+        "id": { "type": "string" },
+        "requesterId": { "type": "string" },
+        "requesterName": { "type": "string" },
+        "targetMemberEmail": { "type": "string" },
+        "targetMemberPhone": { "type": "string" },
+        "targetMemberName": { "type": "string" },
+        "status": { "type": "string" },
+        "duration": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "accuracy": { "type": "number" },
+        "address": { "type": "string" },
+        "requestedAt": { "type": "string" },
+        "expiresAt": { "type": "string" }
+      }
+    },
+    "Device": {
+      "fields": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "deviceName": { "type": "string" },
+        "serialNumber": { "type": "string" },
+        "batteryStatus": { "type": "number" },
+        "lastSync": { "type": "string" },
+        "connectionDate": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "EmergencyAlert": {
+      "fields": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "phone": { "type": "string" },
+        "emergencyType": { "type": "string" },
+        "shareWithFamily": { "type": "boolean" },
+        "shareWithEmergencyServices": { "type": "boolean" },
+        "shareWithVolunteers": { "type": "boolean" },
+        "locationMode": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "accuracy": { "type": "number" },
+        "timestamp": { "type": "string" },
+        "status": { "type": "string" },
+        "resolvedAt": { "type": "string" }
+      }
+    },
+    "SafeShelter": {
+      "fields": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "address": { "type": "string" },
+        "capacity": { "type": "number" },
+        "availability": { "type": "number" },
+        "contactNumber": { "type": "string" },
+        "status": { "type": "string" },
+        "amenities": { "type": "array" }
+      }
+    },
+    "PublicAdvisory": {
+      "fields": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "severity": { "type": "string" },
+        "source": { "type": "string" },
+        "time": { "type": "string" },
+        "description": { "type": "string" },
+        "instructions": { "type": "array" }
+      }
+    },
+    "AuditLog": {
+      "fields": {
+        "id": { "type": "string" },
+        "officerId": { "type": "string" },
+        "officerName": { "type": "string" },
+        "agency": { "type": "string" },
+        "roleTitle": { "type": "string" },
+        "actionType": { "type": "string" },
+        "advisoryTitle": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "sha256Signature": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Registered citizen and emergency responder profiles"
+    },
+    "/family_members/{inviteId}": {
+      "schema": "FamilyMember",
+      "description": "Family safety network member invites and statuses"
+    },
+    "/location_requests/{requestId}": {
+      "schema": "LocationRequest",
+      "description": "Consent-based on-demand location sharing requests"
+    },
+    "/devices/{deviceId}": {
+      "schema": "Device",
+      "description": "Connected REACT wearable devices"
+    },
+    "/emergency_alerts/{alertId}": {
+      "schema": "EmergencyAlert",
+      "description": "Active citizen SOS beacons and distress calls"
+    },
+    "/shelters/{shelterId}": {
+      "schema": "SafeShelter",
+      "description": "Verified disaster evacuation shelters"
+    },
+    "/public_advisories/{advisoryId}": {
+      "schema": "PublicAdvisory",
+      "description": "Official CAP emergency advisories and alerts"
+    },
+    "/audit_logs/{logId}": {
+      "schema": "AuditLog",
+      "description": "Immutable cryptographic government audit ledger"
+    }
+  }
+}
