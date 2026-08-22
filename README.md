@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 </div>
@@ -18,3 +19,7 @@ View your app in AI Studio: https://ai.studio/apps/c6346503-2d73-4f83-8504-bd582
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+=======
+# CrisisChain-AI
+CrisisChain AI is an AI-powered disaster response and coordination platform integrating real-time emergency detection hardware (REACT), citizen safety services, family coordination, and a Government Emergency Operations Center. It enables intelligent decision support, emergency alerts, resource allocation, and crisis management.
+>>>>>>> 427abd0713c55dc5513d2644627f0dc6b6bcf9f5
